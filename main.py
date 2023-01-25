@@ -1,25 +1,29 @@
+# IMPORTS-----------------------------
 import time
 from turtle import Screen
 from player import Player
 from car_manager import CarManager
 from scoreboard import Scoreboard
+# ----------------------------------
 
+# SCREEN ---------------------------
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("grey")
 screen.title("Turtle Road by Daniel Murillo")
 screen.tracer(0)
+# ----------------------------------
 
 # Tommy is the name of the turtle :)
 tommy = Player()
 scoreboard = Scoreboard()
 car_manager = CarManager()
 
-
+# Listens for up arrow key press to move the turtle object (tommy).
 screen.listen()
 screen.onkey(tommy.move_forward, "Up")
 
-
+# MAIN LOOP OF GAME ----------------------------------------------
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
